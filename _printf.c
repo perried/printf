@@ -20,7 +20,10 @@ int _printf(const char *format, ...)
 		if (*format != '%')
 		{
 			printchar(*format);
-			++numchar;
+			if (*format != '\0')
+			{
+				++numchar;
+			}
 			continue;
 		}
 		switch (*++format)
@@ -38,12 +41,18 @@ int _printf(const char *format, ...)
 			for (str_sp = va_arg(ap, char *); *str_sp; str_sp++)
 			{
 				printchar(*str_sp);
-				++numchar;
+				if (*str_p != '\0')
+				{
+					++numchar;
+				}
 			}
 			break;
 		default:
 			printchar(*format);
-			++numchar;
+			if (*format = '\0')
+			{
+				++numchar;
+			}
 			break;
 		}
 	}

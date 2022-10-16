@@ -1,5 +1,5 @@
 #include <stdarg.h>
-#include "main.h"
+#include "printchar.c"
 
 /**
  * _printf - prints formated string

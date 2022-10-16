@@ -12,11 +12,11 @@
 int _printf(const char *format, ...)
 {
 	va_list ap;
-	char *str, char_sp, *str_sp;
+	char char_sp, *str_sp;
 	int numchar = 0;
 
 	va_start(ap, format);
-	for (str = format; *str; str++)
+	while (*format)
 	{
 		if (*str != '%')
 		{
@@ -30,7 +30,7 @@ int _printf(const char *format, ...)
 			printchar('%');
 			break;
 		case 'c':
-			char_sp = va_arg(ap, char);
+			char_sp = va_arg(ap, int);
 			printchar(char_sp);
 			break;
 		case 's':

@@ -18,13 +18,13 @@ int _printf(const char *format, ...)
 	va_start(ap, format);
 	while (*format)
 	{
-		if (*str != '%')
+		if (*format != '%')
 		{
-			printchar(*str);
+			printchar(*format);
 			++numchar;
 			continue;
 		}
-		switch (*++str)
+		switch (*++format)
 		{
 		case '%':
 			printchar('%');
@@ -40,7 +40,7 @@ int _printf(const char *format, ...)
 			}
 			break;
 		default:
-			printchar(*str);
+			printchar(*format);
 			break;
 		}
 	}

@@ -41,7 +41,7 @@ int _printf(const char *format, ...)
 			for (str_sp = va_arg(ap, char *); *str_sp; str_sp++)
 			{
 				printchar(*str_sp);
-				if (*str_p != '\0')
+				if (*str_sp != '\0')
 				{
 					++numchar;
 				}

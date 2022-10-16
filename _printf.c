@@ -27,19 +27,23 @@ int _printf(const char *format, ...)
 		{
 		case '%':
 			printchar('%');
+			++numchar;
 			break;
 		case 'c':
 			char_sp = va_arg(ap, int);
 			printchar(char_sp);
+			++numchar;
 			break;
 		case 's':
 			for (str_sp = va_arg(ap, char *); *str_sp; str_sp++)
 			{
 				printchar(*str_sp);
+				++numchar
 			}
 			break;
 		default:
 			printchar(*format);
+			++numchar;
 			break;
 		}
 	}

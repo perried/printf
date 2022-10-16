@@ -21,7 +21,7 @@ int _printf(const char *format, ...)
 		{
 			printchar(*format);
 			++numchar;
-			*++format;
+			*format++;
 			continue;
 		}
 		switch (*++format)

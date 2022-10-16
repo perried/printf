@@ -49,7 +49,7 @@ int _printf(const char *format, ...)
 			break;
 		default:
 			printchar(*format);
-			if (*format = '\0')
+			if (*format != '\0')
 			{
 				++numchar;
 			}

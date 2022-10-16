@@ -1,6 +1,5 @@
-#include <stdio.h>
 #include <stdarg.h>
-#include "printchar.c"
+#include "main.h"
 
 /**
  * _printf - prints formated string
@@ -12,25 +11,25 @@
 int _printf(const char *format, ...)
 {
 	va_list ap;
-	char *str, char_sp, *str_sp;
+	char char_sp, *str_sp;
 	int numchar = 0;
 
 	va_start(ap, format);
-	for (str = format; *str; str++)
+	for (;*format; format++)
 	{
-		if (*str != '%')
+		if (*format != '%')
 		{
-			printchar(*str);
+			printchar(*format);
 			++numchar;
 			continue;
 		}
-		switch (*++str)
+		switch (*++format)
 		{
 		case '%':
 			printchar('%');
 			break;
 		case 'c':
-			char_sp = va_arg(ap, char);
+			char_sp = va_arg(ap, int);
 			printchar(char_sp);
 			break;
 		case 's':
@@ -40,7 +39,7 @@ int _printf(const char *format, ...)
 			}
 			break;
 		default:
-			printchar(*str);
+			printchar(*format);
 			break;
 		}
 	}

@@ -15,13 +15,12 @@ int _printf(const char *format, ...)
 	int numchar = 0;
 
 	va_start(ap, format);
-	while (*format)
+	for (;*format; format++)
 	{
 		if (*format != '%')
 		{
 			printchar(*format);
 			++numchar;
-			*format++;
 			continue;
 		}
 		switch (*++format)

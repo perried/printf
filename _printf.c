@@ -47,10 +47,6 @@ int _printf(const char *format, ...)
 				}
 			}
 			break;
-		case 'S':
-			char_sp = va_arg(ap, char *);
-			print_custom(char_sp);
-			break;
 		default:
 			printchar(*format);
 			if (*format != '\0')
